@@ -308,10 +308,11 @@ const msfController = {
 
       if (filledFields) {
         msf.setConfirmValues(msf.currentStep);
-	      //----------------------------------------
 	msf.submitHiddenForm(msf.currentStep);
 	 
         msf.currentStep++;
+	            //----------------------------------------
+	console.log(msf.currentStep);
         if (msf.currentStep === msf.steps.length) {
           msf.submitForm();
           msf.hideButtons();
