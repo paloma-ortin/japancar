@@ -312,7 +312,7 @@ const msfController = {
 	 
         msf.currentStep++;
 	            //----------------------------------------
-	console.log(msf.currentStep);
+	console.log(msf.steps.length);
         if (msf.currentStep === msf.steps.length) {
           msf.submitForm();
           msf.hideButtons();
@@ -420,7 +420,7 @@ const msfController = {
 <script>
 	var Webflow = Webflow || [];
 	Webflow.push(function () {
-		alert("edit 2");
+		alert("edit 3");
 		let msfData = new MSF({
 			formID: "form-generico",
 			nextButtonID1: "next1",
