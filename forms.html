@@ -109,13 +109,13 @@ class MSF {
     this.next1 = document.getElementById(data.nextButtonID1);
     this.next2 = document.getElementById(data.nextButtonID2);
     this.next3 = document.getElementById(data.nextButtonID3);
-    this.next4 = document.getElementById(data.nextButtonID4);
+    //this.next4 = document.getElementById(data.nextButtonID4);
     // editar en función del número de pasos
     // estos botones NO incluyen el del primer paso
     // también hay que cambiarlo en los event listeners
     this.back2 = document.getElementById(data.backButtonID2);
     this.back3 = document.getElementById(data.backButtonID3);
-    this.back4 = document.getElementById(data.backButtonID4);
+    //this.back4 = document.getElementById(data.backButtonID4);
     
     this.submitButton = this.form.querySelector('input[type="submit"]');
     this.mask = this.form.querySelector(".w-slider-mask");
@@ -139,7 +139,6 @@ class MSF {
     if (data.alertElementID4) {
       this.alertElement4 = document.getElementById(data.alertElementID4);
     }
-    //---aquí está entrando bien----------------------------
     if (data.hiddenFormID) {
       this.hiddenForm = document.getElementById(data.hiddenFormID);
       this.hiddenSubmitButton = this.hiddenForm.querySelector(
@@ -292,11 +291,11 @@ const msfController = {
 	    msf.next1.addEventListener("click", nextClick);
 	    msf.next2.addEventListener("click", nextClick);
 	    msf.next3.addEventListener("click", nextClick);
-	    msf.next4.addEventListener("click", nextClick);
+	    //msf.next4.addEventListener("click", nextClick);
       
 	    msf.back2.addEventListener("click", backClick);
 	    msf.back3.addEventListener("click", backClick);
-	    msf.back4.addEventListener("click", backClick);
+	    //msf.back4.addEventListener("click", backClick);
 	    //-----------------------------------------
 	    
 	    
@@ -337,28 +336,7 @@ const msfController = {
       }
     };
 	  
-	  /*const nextClick3 = () => {
-      		const filledFields = checkRequiredInputs(msf.currentStep);
-      		if (filledFields) {
-       			 msf.setConfirmValues(msf.currentStep);
-			 // esto es lo único diferente con nextClick
-			 msf.submitHiddenForm(msf.currentStep)
-       			 msf.currentStep++;
-       			 if (msf.currentStep === msf.steps.length) {
-         			msf.submitForm();
-          			msf.hideButtons();
-         			msf.hideAlert();
-      			 } else {
-       				msf.goNext();
-          			msf.setMaskHeight();
-          			//msf.setNextButtonText();
-          			msf.hideAlert();
-        		}
-      		} else {
-        		msf.showAlert();
-      		}
-    	};*/
-
+	 
     const backClick = () => {
       const previousStep = msf.currentStep - 1;
 
@@ -368,11 +346,7 @@ const msfController = {
         msf.setMaskHeight();
         //msf.setNextButtonText();
         msf.hideAlert();
-	// en el primer paso, vuelve a cargar los modelos
-	/*if (previousStep === 0){
-		console.log("vuelvo al 1");
-		cambiar_modelos($('#marca').val());
-      	}*/
+	
       }
     };
 
@@ -454,16 +428,16 @@ const msfController = {
 <script>
 	var Webflow = Webflow || [];
 	Webflow.push(function () {
-		//alert("edit 33");
+		alert("edit 1");
 		let msfData = new MSF({
 			formID: "form-generico",
 			nextButtonID1: "next1",
 			nextButtonID2: "next2",
 			nextButtonID3: "next3",
-			nextButtonID4: "next4",
+			//nextButtonID4: "next4",
 			backButtonID2: "back2",
 			backButtonID3: "back3",
-			backButtonID4: "back4",
+			//backButtonID4: "back4",
 			// solo se usa si el botón de next está fuera del slider
 			//nextButtonText: "Continuar",
 			//submitButtonText: "¡Obtener respuestas!",
@@ -472,8 +446,8 @@ const msfController = {
 			alertElementID1: "alert1",
 			alertElementID2: "alert2",
 			alertElementID3: "alert3",
-			alertElementID4: "alert4",
-			hiddenFormID: "form-no-oferta",
+			//alertElementID4: "alert4",
+			//hiddenFormID: "form-no-oferta",
 			//se puede meter también una alerta
       
      
